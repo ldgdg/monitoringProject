@@ -3,12 +3,12 @@
 
 function Sidebar() {
   return (
-    <aside className="Sidebar">
-      <div className="logo">Bigcraft</div>
-      <ul className="menu">
-        <li className="selected">대시보드</li>
-        <li>홈페이지 관리</li>
-        <li>기타 설정</li>
+    <aside className="Sidebar r20">
+      <div className="logo box20">Bigcraft</div>
+      <ul className="menu box20">
+        <li className="selected r10">대시보드</li>
+        <li className="r10">홈페이지 관리</li>
+        <li className="r10">기타 설정</li>
       </ul>
     </aside>
   );

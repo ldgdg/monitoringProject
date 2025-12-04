@@ -25,9 +25,25 @@
 * {
   box-sizing: border-box;
 }
-div {
+.box20 {
   padding: var(--initial-gap);
 }
+.r20 {
+  border-radius: var(--initial-gap);
+}
+.box10 {
+  padding: calc(var(--initial-gap) / 2);
+}
+.r10 {
+  border-radius: calc(var(--initial-gap) / 2);
+}
+.box5 {
+  padding: calc(var(--initial-gap) / 4);
+}
+.r5 {
+  border-radius: calc(var(--initial-gap) / 4);
+}
+
 div.text {
   padding: 0;
 }
