@@ -1,68 +1,53 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+::selection {
+  background: var(--selection-color);
+}
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --initial-gap: 20px;
+  --background: #5d6d82;
+  --first-cell-bg: rgba(0, 0, 0, 0.35);
+  --second-cell-bg: rgba(0, 0, 0, 0.15);
+  --third-cell-bg: rgba(0, 0, 0, 0.15);
+  --fourth-cell-bg: rgba(0, 0, 0, 0.15);
+  --text-focused-color: rgba(255, 255, 255, 1);
+  --text-unfocused-color: rgba(255, 255, 255, 0.85);
+  --selection-color: rgba(32, 91, 139, 0.65);
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+:root[color-theme="light"] {
+  --background: #adbdd2;
+  --first-cell-bg: rgba(255, 255, 255, 0.65);
+  --second-cell-bg: rgba(255, 255, 255, 0.65);
+  --third-cell-bg: rgba(255, 255, 255, 0.5);
+  --fourth-cell-bg: rgba(255, 255, 255, 0.65);
+  --text-focused-color: rgba(0, 0, 0, 1);
+  --text-unfocused-color: rgba(0, 0, 0, 0.65);
 }
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+}
+div {
+  padding: var(--initial-gap);
+}
+div.text {
+  padding: 0;
+}
+#root {
+  height: 100svh;
+  background: var(--background);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-focused-color);
+  font-size: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
