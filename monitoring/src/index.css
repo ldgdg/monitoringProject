@@ -5,25 +5,94 @@
 :root {
   --initial-gap: 20px;
   --background: #5d6d82;
-  --first-cell-bg: rgba(0, 0, 0, 0.35);
-  --second-cell-bg: rgba(0, 0, 0, 0.15);
-  --third-cell-bg: rgba(0, 0, 0, 0.15);
-  --fourth-cell-bg: rgba(0, 0, 0, 0.15);
-  --text-focused-color: rgba(255, 255, 255, 1);
-  --text-unfocused-color: rgba(255, 255, 255, 0.85);
+
+  --static-k00: rgba(0, 0, 0, 0);
+  --static-k15: rgba(0, 0, 0, 0.15);
+  --static-k25: rgba(0, 0, 0, 0.25);
+  --static-k35: rgba(0, 0, 0, 0.35);
+  --static-k50: rgba(0, 0, 0, 0.5);
+  --static-k65: rgba(0, 0, 0, 0.65);
+  --static-k75: rgba(0, 0, 0, 0.75);
+  --static-k85: rgba(0, 0, 0, 0.85);
+  --static-k100: rgba(0, 0, 0, 1);
+
+  --static-w00: rgba(255, 255, 255, 0);
+  --static-w15: rgba(255, 255, 255, 0.15);
+  --static-w25: rgba(255, 255, 255, 0.25);
+  --static-w35: rgba(255, 255, 255, 0.35);
+  --static-w50: rgba(255, 255, 255, 0.5);
+  --static-w65: rgba(255, 255, 255, 0.65);
+  --static-w75: rgba(255, 255, 255, 0.75);
+  --static-w85: rgba(255, 255, 255, 0.85);
+  --static-w100: rgba(255, 255, 255, 1);
+
+  --k00: rgba(0, 0, 0, 0);
+  --k15: rgba(0, 0, 0, 0.15);
+  --k25: rgba(0, 0, 0, 0.25);
+  --k35: rgba(0, 0, 0, 0.35);
+  --k50: rgba(0, 0, 0, 0.5);
+  --k65: rgba(0, 0, 0, 0.65);
+  --k75: rgba(0, 0, 0, 0.75);
+  --k85: rgba(0, 0, 0, 0.85);
+  --k100: rgba(0, 0, 0, 1);
+
+  --w00: rgba(255, 255, 255, 0);
+  --w15: rgba(255, 255, 255, 0.15);
+  --w25: rgba(255, 255, 255, 0.25);
+  --w35: rgba(255, 255, 255, 0.35);
+  --w50: rgba(255, 255, 255, 0.5);
+  --w65: rgba(255, 255, 255, 0.65);
+  --w75: rgba(255, 255, 255, 0.75);
+  --w85: rgba(255, 255, 255, 0.85);
+  --w100: rgba(255, 255, 255, 1);
+
+  --first-cell-bg: var(--k35);
+  --second-cell-bg: var(--k15);
+  --third-cell-bg: var(--k15);
+  --fourth-cell-bg: var(--k15);
+  --text-focused-color: var(--w100);
+  --text-unfocused-color: var(--w85);
+
+  --color-p1: #ff6384;
+  --color-p2: #4bc0c0;
+  --color-p3: #36a2eb;
   --selection-color: rgba(32, 91, 139, 0.65);
+  --hover-color: rgba(32, 91, 139, 0.15);
 }
 :root[color-theme="light"] {
+  --k00: rgba(255, 255, 255, 0);
+  --k15: rgba(255, 255, 255, 0.15);
+  --k25: rgba(255, 255, 255, 0.25);
+  --k35: rgba(255, 255, 255, 0.35);
+  --k50: rgba(255, 255, 255, 0.5);
+  --k65: rgba(255, 255, 255, 0.65);
+  --k75: rgba(255, 255, 255, 0.75);
+  --k85: rgba(255, 255, 255, 0.85);
+  --k100: rgba(255, 255, 255, 1);
+
+  --w00: rgba(0, 0, 0, 0);
+  --w15: rgba(0, 0, 0, 0.15);
+  --w25: rgba(0, 0, 0, 0.25);
+  --w35: rgba(0, 0, 0, 0.35);
+  --w50: rgba(0, 0, 0, 0.5);
+  --w65: rgba(0, 0, 0, 0.65);
+  --w75: rgba(0, 0, 0, 0.75);
+  --w85: rgba(0, 0, 0, 0.85);
+  --w100: rgba(0, 0, 0, 1);
+
   --background: #adbdd2;
-  --first-cell-bg: rgba(255, 255, 255, 0.65);
-  --second-cell-bg: rgba(255, 255, 255, 0.65);
-  --third-cell-bg: rgba(255, 255, 255, 0.5);
-  --fourth-cell-bg: rgba(255, 255, 255, 0.65);
-  --text-focused-color: rgba(0, 0, 0, 1);
-  --text-unfocused-color: rgba(0, 0, 0, 0.65);
+  --first-cell-bg: var(--static-w65);
+  --second-cell-bg: var(--static-w50);
+  --third-cell-bg: var(--static-w50);
+  --fourth-cell-bg: var(--static-w65);
+  --text-focused-color: var(--static-k100);
+  --text-unfocused-color: var(--static-k65);
+  --selection-color: rgba(154, 182, 205, 0.65);
+  --hover-color: rgba(154, 182, 205, 0.35);
 }
 * {
   box-sizing: border-box;
+  transition: all 250ms ease-out;
 }
 .box20 {
   padding: var(--initial-gap);
@@ -49,7 +118,7 @@ div.text {
 }
 #root {
   height: 100svh;
-  background: var(--background);
+  /* background: var(--background); */
 }
 
 body {
@@ -61,9 +130,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-focused-color);
   font-size: 20px;
+  background: linear-gradient(
+      0deg,
+      rgba(93, 109, 130, 0.65) 0%,
+      rgba(93, 109, 130, 0.65) 100%
+    ),
+    radial-gradient(
+      63.79% 41.44% at 97.92% 96.94%,
+      #8e7ce0 0%,
+      rgba(142, 124, 224, 0) 100%
+    ),
+    radial-gradient(
+      66.59% 51.05% at 12.29% 18.43%,
+      #5e5ed0 0%,
+      rgba(94, 94, 208, 0) 100%
+    ),
+    #86a7d2;
+  background-blend-mode: normal, multiply, multiply, normal;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  border: none;
+  box-shadow: inset 0 0 0 0 var(--static-k35), inset 0 0 0 0 var(--static-w25),
+    0 2px 6px -2px var(--static-k15);
+  filter: brightness(1);
+  transform: scale(1);
+  transition: 250ms all ease-out;
+}
+button:hover {
+  box-shadow: inset 0 0 0 0 var(--static-k35), inset 0 0 0 0 var(--static-w25),
+    0 3px 9px -3px var(--static-k35);
+  filter: brightness(1.3);
+  transform: scale(1.01);
+}
+button:active {
+  box-shadow: inset 0 1px 3px -1px var(--static-k35),
+    inset 0 -1px 3px 0 var(--static-w25), 0 0px 0px 0px var(--static-k25);
+  filter: brightness(0.95);
+  transform: scale(1);
 }

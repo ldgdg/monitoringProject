@@ -4,8 +4,8 @@
 function Header() {
   return (
     <header className="Header box20 r20">
-      <div>대시보드</div>
-      <div>
+      <div className="box20">대시보드</div>
+      <div className="box20">
         <span>2025.12.02 17:55 최신화</span>
         <button className="refresh">⟳</button>
       </div>
